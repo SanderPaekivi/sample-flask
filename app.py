@@ -109,7 +109,7 @@ class LSTMnetwork(nn.Module):
 #### #How to find path to file? ####
 ####################################
 #model = pickle.load(open('LSTM100x1_ArfimaAlpha.pkl','rb'))
-model = LSTMNetwork()
+model = LSTMnetwork()
 model = torch.load('LSTM100x1_model.pkl')
 
 
