@@ -108,8 +108,8 @@ class LSTMnetwork(nn.Module):
 ####################################
 #### #How to find path to file? ####
 ####################################
-model = pickle.load(open('LSTM100x1_ArfimaAlpha.pkl','rb'))
-
+#model = pickle.load(open('LSTM100x1_ArfimaAlpha.pkl','rb'))
+model = torch.load('model')
 
 
 # Running the flask app
