@@ -161,4 +161,5 @@ def predict():
     return render_template('index.html', prediction_text='The Hurst parameter of generated data was estimated by the LSTM to be {}'.format(prediction), 
                            figure_to_print = plot_url)
 
-
+if __name__ == '__main__':
+     app.run()
