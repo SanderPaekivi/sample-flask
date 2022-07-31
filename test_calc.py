@@ -65,10 +65,6 @@ for alpha in alphas:
 train_data = arfima_data[0:len(arfima_data)-test_set_len]
 test_data = arfima_data[len(arfima_data)-test_set_len:]
 
-#torch.manual_seed(8888)
-
-from google.colab import drive
-drive.mount('/content/drive')
 
 import torch
 import torch.nn as nn
