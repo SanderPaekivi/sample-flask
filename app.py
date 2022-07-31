@@ -109,6 +109,8 @@ model = LSTMnetwork()
 model.load_state_dict(torch.load(working_dir + 'LSTM100x1_model_state.pkl'))
 model.eval()
  
+app = Flask(__name__)    
+
 @app.route('/', methods=['GET'])
 def home():
     
