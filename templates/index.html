@@ -21,8 +21,8 @@ Test model for ARFIMA alpha prediction
 <h4> 
 
 <form action="{{url_for('predict')}}" method="post">
-    <p> Alpha : <input type='text' name='Alpha' placeholder='Enter the alpha to be used in ARFIMA simulation, value must be between -0.5 and 0.5.' required='required' />
-    <p> Time-series length : <input type='text' name='tsl' placeholder='Enter the number of time-points to be generated based on your alpha. Must be positive integer' required='required' />
+    <p> Alpha : <input type='text' name='Alpha' placeholder='-0.5 to 0.5' required='required' />
+    <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N steps to gen.' required='required' />
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
 </form>
 
