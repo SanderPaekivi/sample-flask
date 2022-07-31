@@ -36,35 +36,10 @@ from io import BytesIO
 import base64
 
 
-
-# Running the flask app
-#app = Flask(__name__)
-
-####################################
-### How to locate template file? ###
-####################################
 app = Flask(__name__)
 #run_with_ngrok(app)
 
-@app.route('/', methods=['GET'])
-def home():
-    
-    return render_template('index.html', prediction_text = '')
-    #return 'hello world'
-
-@app.route('/', methods=['POST'])
-def predict():
-    #alpha_to_gen = list(request.form.values())
-    #print(alpha_to_gen)
-    #alpha_to_gen = float(alpha_to_gen[0])
-    #ts_len = float(alpha_to_hen[1])
-
-    inputs = request.form.to_dict()
-    print(inputs)
-    alpha_to_gen = float(inputs['Alpha'])
-    ts_len = int(inputs['tsl'])
-
-    #ts_len = 250
+if __name__ == '__main__':
     
     def __ma_model(n_points, noise_std = 1, noise_alpha = 2, params = []):
         ma_order = len(params)
@@ -134,7 +109,30 @@ def predict():
         
     model = LSTMnetwork()
     model = torch.load('LSTM100x1_model.pkl')
+    
+     app.run(host='0.0.0.0')
+ 
 
+@app.route('/', methods=['GET'])
+def home():
+    
+    return render_template('index.html', prediction_text = '')
+    #return 'hello world'
+
+@app.route('/', methods=['POST'])
+def predict():
+    #alpha_to_gen = list(request.form.values())
+    #print(alpha_to_gen)
+    #alpha_to_gen = float(alpha_to_gen[0])
+    #ts_len = float(alpha_to_hen[1])
+
+    inputs = request.form.to_dict()
+    print(inputs)
+    alpha_to_gen = float(inputs['Alpha'])
+    ts_len = int(inputs['tsl'])
+
+    #ts_len = 250
+    
     base = __ma_model(ts_len)
     frac_base = __frac_diff(base, alpha_to_gen)
     data = __arma_model(frac_base)
@@ -161,5 +159,3 @@ def predict():
     return render_template('index.html', prediction_text='The Hurst parameter of generated data was estimated by the LSTM to be {}'.format(prediction), 
                            figure_to_print = plot_url)
 
-if __name__ == '__main__':
-     app.run(host='0.0.0.0')
