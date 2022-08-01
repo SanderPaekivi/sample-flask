@@ -126,37 +126,41 @@ def predict():
         alpha_to_gen = float(inputs['Alpha'])
         ts_len = int(inputs['tsl'])
 
-        #ts_len = 250
+        if ts_len < 2001:
+            
+            #ts_len = 250
     
         
-        base = __ma_model(ts_len)
-        frac_base = __frac_diff(base, alpha_to_gen)
-        data = __arma_model(frac_base)
+            base = __ma_model(ts_len)
+            frac_base = __frac_diff(base, alpha_to_gen)
+            data = __arma_model(frac_base)
 
-        with torch.no_grad():
-
-            model.eval()
-        
-            seq = torch.FloatTensor(data)
             with torch.no_grad():
-                model.hidden = (torch.zeros(1,1,model.hidden_size),
-                                torch.zeros(1,1,model.hidden_size))
-                prediction = round(model(seq).item(),2)
 
-        img = BytesIO()
-        plt.plot(data, color ='green')
-        plt.grid()
-        plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
-        plt.ylabel('ARFIMA(t)');
-        plt.xlabel('time-steps');
-        plt.savefig(img,format='png')
-        plt.close()
-        img.seek(0)
-        plot_url = base64.b64encode(img.getvalue()).decode('utf8')
+                model.eval()
+            
+                seq = torch.FloatTensor(data)
+                with torch.no_grad():
+                    model.hidden = (torch.zeros(1,1,model.hidden_size),
+                                    torch.zeros(1,1,model.hidden_size))
+                    prediction = round(model(seq).item(),2)
 
-        return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
-        figure_to_print = plot_url)
-    
+            img = BytesIO()
+            plt.plot(data, color ='purple')
+            plt.grid()
+            plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
+            plt.ylabel('ARFIMA(t)');
+            plt.xlabel('time-steps');
+            plt.savefig(img,format='png')
+            plt.close()
+            img.seek(0)
+            plot_url = base64.b64encode(img.getvalue()).decode('utf8')
+
+            return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
+            figure_to_print = plot_url)
+        else:
+            return render_template('index.html', prediction_text=f'The length of time-series you wish to generate is a bit long for my server to handle. Please choose a smaller integer!')
+
     except:
         return render_template('index.html', prediction_text=f'One of the inputs you entered was faulty. Make sure that alpha is between values of -0.5 and 0.5, with the decimal denoted by a dot. Also, the length must be an integer >1')
 
