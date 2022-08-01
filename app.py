@@ -119,9 +119,9 @@ def home():
 
 @app.route('/', methods=['POST'])
 def predict():
-
     inputs = request.form.to_dict()
-    try: 
+
+    try:
         #print(inputs)
         alpha_to_gen = float(inputs['Alpha'])
         ts_len = int(inputs['tsl'])
@@ -140,9 +140,7 @@ def predict():
         with torch.no_grad():
             model.hidden = (torch.zeros(1,1,model.hidden_size),
                             torch.zeros(1,1,model.hidden_size))
-            
             prediction = round(model(seq).item(),2)
-
 
         img = BytesIO()
         plt.plot(data, color ='green')
@@ -154,10 +152,10 @@ def predict():
         plt.close()
         img.seek(0)
         plot_url = base64.b64encode(img.getvalue()).decode('utf8')
-
-
-        return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?', 
-                            figure_to_print = plot_url)
+        
+        return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
+        figure_to_print = plot_url)
+    
     except:
         return render_template('index.html', prediction_text=f'One of the inputs you entered was faulty. Make sure that alpha is between values of -0.5 and 0.5, with the decimal denoted by a dot. Also, the length must be an integer >1')
 
