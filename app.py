@@ -148,7 +148,7 @@ def predict():
     plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
     plt.ylabel('ARFIMA(t)');
     plt.xlabel('time-steps');
-    plt.savefig(img,format='png', edgecolor='r', linewidth=2.0)
+    plt.savefig(img,format='png', edgecolor='black', linewidths=2.0)
     plt.close()
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode('utf8')
