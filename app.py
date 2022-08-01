@@ -126,7 +126,7 @@ def predict():
         alpha_to_gen = float(inputs['Alpha'])
         ts_len = int(inputs['tsl'])
 
-        if ts_len < 2001:
+        if ts_len < 3001:
             
             #ts_len = 250
     
@@ -159,7 +159,7 @@ def predict():
             return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
             figure_to_print = plot_url)
         else:
-            return render_template('index.html', prediction_text=f'The length of time-series you wish to generate is a bit long for my server to handle. Please choose a smaller integer!')
+            return render_template('index.html', prediction_text=f'The length of time-series you wish to generate is a bit long for my server to handle. Please choose an integer smaller than 3000!')
 
     except:
         return render_template('index.html', prediction_text=f'One of the inputs you entered was faulty. Make sure that alpha is between values of -0.5 and 0.5, with the decimal denoted by a dot. Also, the length must be an integer >1')
