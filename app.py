@@ -146,7 +146,7 @@ def predict():
                     prediction = round(model(seq).item(),2)
 
             img = BytesIO()
-            plt.plot(data, color ='purple')
+            plt.plot(data, color ='c')
             plt.grid()
             plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
             plt.ylabel('ARFIMA(t)');
