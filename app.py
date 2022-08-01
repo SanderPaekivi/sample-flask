@@ -121,12 +121,13 @@ def home():
 def predict():
 
     inputs = request.form.to_dict()
-    #print(inputs)
-    alpha_to_gen = float(inputs['Alpha'])
-    ts_len = int(inputs['tsl'])
-
-    #ts_len = 250
     try: 
+        #print(inputs)
+        alpha_to_gen = float(inputs['Alpha'])
+        ts_len = int(inputs['tsl'])
+
+        #ts_len = 250
+    
         
         base = __ma_model(ts_len)
         frac_base = __frac_diff(base, alpha_to_gen)
