@@ -143,7 +143,7 @@ def predict():
 
 
     img = BytesIO()
-    plt.plot(data)
+    plt.plot(data, color ='green')
     plt.grid()
     plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
     plt.ylabel('ARFIMA(t)');
