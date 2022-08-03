@@ -146,7 +146,7 @@ def predict():
         plt.grid()
         coefs = np.polyfit(alphas, LSTMalphas, 1)
         lr1, lr2 = coefs
-        plt.plot(alphas, [lr1*i for i in list(alphas)]+lr2)
+        plt.plot(alphas, [lr1*i for i in list(alphas)]+lr2, color='black')
         yfit = np.polyval(coefs,alphas)
         mean_abs_error = np.mean( [abs(LSTMalphas[i]-yfit[i]) for i in range(len(yfit))] )
         #Need to check for a better way to give position, but this works for now. 
