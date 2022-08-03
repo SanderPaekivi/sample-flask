@@ -59,8 +59,9 @@ Simple demo for LSTM estimation of an ARFIMA time series long-term memory parame
         <button type="submit" class="btn btn-primary btn-block btn-large">Estimate!</button>
 </form>
 
-
+{% if figure_to_print %}
 <img src = "data:image/png;base64, {{ figure_to_print }}" >
+{% endif %}
 
 </h4>
 <h2>
