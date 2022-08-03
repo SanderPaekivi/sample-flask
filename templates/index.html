@@ -18,11 +18,18 @@
         border: 1px solid black
         }
     * {text-align: center;
-      color: blue;
+      color: black;
       }
     .center {
       text-align: center;
       color:black;
+      }
+    #rcorners1 {
+      border-radius: 25px;
+      background: #73AD21;
+      padding: 20px; 
+      width: 200px;
+      height: 150px; 
       }
     
     
@@ -31,17 +38,17 @@
 <body text='black'>
 <h1>
 <b>
-<i>
+<i id="rcorners1">
 <font size=15>
 Simple demo for LSTM estimation of an ARFIMA time series long-term memory parameter, alpha.
 </font>
 </i>
 </b>
 </h1>
-<div style="background-color:black">
+<div style="background-color:black" >
 <hr>
 <hr></div>
-<div style="background-color:rgba(0,0,0,0.7)">
+<div style="background-color:rgba(0,0,0,0.3)">
 <h2> This is a simple webapp to learn model deployment. Your first input is the memory parameter of an ARFIMA model, alpha. It takes values between  -0.5 and 0.5. The second value is the length of ARFIMA to generate, which must be an integer greater than 1. After entry, a recurrent neural network, specifically an LSTM will attempt to estimate alpha from the generated time-series.</h2>
 </div>
 <h4> 
