@@ -31,10 +31,11 @@
       margin-left: 40px;
       margin-right: 40px
       }
-    .diver { background:black;
-      margin-left:40px;
-      margin-right:40px
-    }
+    hr.line {
+      width: 90px;
+      margin-right: 40px;
+      margin-left: 40px
+      }
     
     
 </style>
@@ -51,9 +52,9 @@ Simple demo for LSTM estimation of an ARFIMA time series long-term memory parame
 </div>
 </b>
 </h1>
-<div id="diver" >
-<hr>
-<hr></div>
+<div style="background-color:black">
+<hr class="line">
+<hr class="line"></div>
 <div id="rcorners1" style="background-color:#73AD21">
 <h2> This is a simple webapp to learn model deployment. Your first input is the memory parameter of an ARFIMA model, alpha. It takes values between  -0.5 and 0.5. The second value is the length of ARFIMA to generate, which must be an integer greater than 1. After entry, a recurrent neural network, specifically an LSTM will attempt to estimate alpha from the generated time-series.</h2>
 <h4> 
