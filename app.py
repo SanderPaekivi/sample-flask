@@ -142,7 +142,7 @@ def predict():
 
 
         img = BytesIO()
-        plt.scatter(alphas, LSTMalphas, color ='c')
+        plt.scatter(alphas, LSTMalphas, color ='g')
         plt.grid()
         coefs = np.polyfit(alphas, LSTMalphas, 1)
         lr1, lr2 = coefs
@@ -150,7 +150,7 @@ def predict():
         yfit = np.polyval(coefs,alphas)
         mean_abs_error = np.mean( [abs(LSTMalphas[i]-yfit[i]) for i in range(len(yfit))] )
         #Need to check for a better way to give position, but this works for now. 
-        plt.text(-0.53, 0.35, 'Mean Abs Error = '+str(round(mean_abs_error,2)), fontsize=14,
+        plt.text(-0.53, 0.35, 'Mean Abs Error = '+str(round(mean_abs_error,3)), fontsize=14,
                 verticalalignment='top')
 
 
@@ -197,7 +197,7 @@ def predict():
                         prediction = round(model(seq).item(),2)
 
                 img = BytesIO()
-                plt.plot(data, color ='c')
+                plt.plot(data, color ='g')
                 plt.grid()
                 plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
                 plt.ylabel('ARFIMA(t)');
