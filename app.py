@@ -177,6 +177,8 @@ def predict():
             alpha_to_gen = float(inputs['Alpha'])
             ts_len = int(inputs['tsl'])
 
+            round_len = len(str(alpha_to_gen))-2
+
             if ts_len < 3001:
                 
                 #ts_len = 250
@@ -194,7 +196,10 @@ def predict():
                     with torch.no_grad():
                         model.hidden = (torch.zeros(1,1,model.hidden_size),
                                         torch.zeros(1,1,model.hidden_size))
-                        prediction = round(model(seq).item(),2)
+                        if round_len < 3:
+                            prediction = round(model(seq).item(), 3)
+                        else:
+                            prediction = round(model(seq).item(), round_len)
 
                 img = BytesIO()
                 plt.plot(data, color ='#73AD21')
