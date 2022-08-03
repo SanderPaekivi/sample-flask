@@ -149,8 +149,8 @@ def predict():
         plt.plot(alphas, [lr1*i for i in list(alphas)]+lr2)
         yfit = np.polyval(coefs,alphas)
         mean_abs_error = np.mean( [abs(LSTMalphas[i]-yfit[i]) for i in range(len(yfit))] )
-
-        plt.text(-0.5, 0.4, 'Mean Abs Error = '+str(round(mean_abs_error,2)), fontsize=14,
+        #Need to check for a better way to give position, but this works for now. 
+        plt.text(-0.53, 0.35, 'Mean Abs Error = '+str(round(mean_abs_error,2)), fontsize=14,
                 verticalalignment='top')
 
 
