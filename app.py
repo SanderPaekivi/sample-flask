@@ -118,6 +118,43 @@ def home():
     #return 'hello world'
 
 @app.route('/', methods=['POST'])
+def picture():
+
+    alphas = []
+    LSTMalphas = []
+
+    for o in range(200):
+        base = __ma_model(100)
+        alpha = -1*np.random.uniform(-0.5,0.5)
+        frac_base = __frac_diff(base, alpha)
+        data = __arma_model(frac_base)
+
+        with torch.no_grad():
+
+            model.eval()
+            seq = torch.FloatTensor(data)
+            model.hidden = (torch.zeros(1,1,model.hidden_size),
+                            torch.zeros(1,1,model.hidden_size))
+            LSTMalphas.append( round(model(seq).item(),2) )
+            alphas.append( alpha )
+
+
+    img = BytesIO()
+    plt.scatter(alphas, LSTMalphas, color ='c')
+    plt.grid()
+    plt.title(f'ARFIMA alpha vs LSTM estimate.');
+    plt.ylabel('LSTM alpha');
+    plt.xlabel('Real alpha');
+    plt.savefig(img,format='png')
+    plt.close()
+    img.seek(0)
+    plot_url = base64.b64encode(img.getvalue()).decode('utf8')
+
+
+    return render_template('index.html', prediction_text=f'This scatter-plot is based on 200 randomly chosen alpha values, generating 100 units long time-series, with the LSTM providing estimations.',
+            figure_to_print = plot_url)
+
+@app.route('/', methods=['POST'])
 def predict():
     inputs = request.form.to_dict()
 
