@@ -117,89 +117,93 @@ def home():
     return render_template('index.html', prediction_text = '')
     #return 'hello world'
 
-@app.route('/', methods=['POST'])
-def picture():
-
-    alphas = []
-    LSTMalphas = []
-
-    for o in range(200):
-        base = __ma_model(100)
-        alpha = -1*np.random.uniform(-0.5,0.5)
-        frac_base = __frac_diff(base, alpha)
-        data = __arma_model(frac_base)
-
-        with torch.no_grad():
-
-            model.eval()
-            seq = torch.FloatTensor(data)
-            model.hidden = (torch.zeros(1,1,model.hidden_size),
-                            torch.zeros(1,1,model.hidden_size))
-            LSTMalphas.append( round(model(seq).item(),2) )
-            alphas.append( alpha )
-
-
-    img = BytesIO()
-    plt.scatter(alphas, LSTMalphas, color ='c')
-    plt.grid()
-    plt.title(f'ARFIMA alpha vs LSTM estimate.');
-    plt.ylabel('LSTM alpha');
-    plt.xlabel('Real alpha');
-    plt.savefig(img,format='png')
-    plt.close()
-    img.seek(0)
-    plot_url = base64.b64encode(img.getvalue()).decode('utf8')
-
-
-    return render_template('index.html', prediction_text=f'This scatter-plot is based on 200 randomly chosen alpha values, generating 100 units long time-series, with the LSTM providing estimations.',
-            figure_to_print = plot_url)
 
 @app.route('/', methods=['POST'])
 def predict():
-    inputs = request.form.to_dict()
-
-    try:
-        #print(inputs)
-        alpha_to_gen = float(inputs['Alpha'])
-        ts_len = int(inputs['tsl'])
-
-        if ts_len < 3001:
-            
-            #ts_len = 250
-    
+    if request.form['submit_button'] == 'plot scatter':
         
-            base = __ma_model(ts_len)
-            frac_base = __frac_diff(base, alpha_to_gen)
+        alphas = []
+        LSTMalphas = []
+
+        for o in range(200):
+            base = __ma_model(100)
+            alpha = -1*np.random.uniform(-0.5,0.5)
+            frac_base = __frac_diff(base, alpha)
             data = __arma_model(frac_base)
 
             with torch.no_grad():
 
                 model.eval()
-            
                 seq = torch.FloatTensor(data)
+                model.hidden = (torch.zeros(1,1,model.hidden_size),
+                                torch.zeros(1,1,model.hidden_size))
+                LSTMalphas.append( round(model(seq).item(),2) )
+                alphas.append( alpha )
+
+
+        img = BytesIO()
+        plt.scatter(alphas, LSTMalphas, color ='c')
+        plt.grid()
+        plt.title(f'ARFIMA alpha vs LSTM estimate.');
+        plt.ylabel('LSTM alpha');
+        plt.xlabel('Real alpha');
+        plt.savefig(img,format='png')
+        plt.close()
+        img.seek(0)
+        plot_url = base64.b64encode(img.getvalue()).decode('utf8')
+
+
+        return render_template('index.html', prediction_text=f'This scatter-plot is based on 200 randomly chosen alpha values, generating 100 units long time-series, with the LSTM providing estimations.',
+                figure_to_print = plot_url)
+
+        
+        
+    elif request.form['submit_button'] == 'plot one':
+
+        inputs = request.form.to_dict()
+
+        try:
+            #print(inputs)
+            alpha_to_gen = float(inputs['Alpha'])
+            ts_len = int(inputs['tsl'])
+
+            if ts_len < 3001:
+                
+                #ts_len = 250
+        
+            
+                base = __ma_model(ts_len)
+                frac_base = __frac_diff(base, alpha_to_gen)
+                data = __arma_model(frac_base)
+
                 with torch.no_grad():
-                    model.hidden = (torch.zeros(1,1,model.hidden_size),
-                                    torch.zeros(1,1,model.hidden_size))
-                    prediction = round(model(seq).item(),2)
 
-            img = BytesIO()
-            plt.plot(data, color ='c')
-            plt.grid()
-            plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
-            plt.ylabel('ARFIMA(t)');
-            plt.xlabel('time-steps');
-            plt.savefig(img,format='png')
-            plt.close()
-            img.seek(0)
-            plot_url = base64.b64encode(img.getvalue()).decode('utf8')
+                    model.eval()
+                
+                    seq = torch.FloatTensor(data)
+                    with torch.no_grad():
+                        model.hidden = (torch.zeros(1,1,model.hidden_size),
+                                        torch.zeros(1,1,model.hidden_size))
+                        prediction = round(model(seq).item(),2)
 
-            return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
-            figure_to_print = plot_url)
-        else:
-            return render_template('index.html', prediction_text=f'The length of time-series you wish to generate is a bit long for my server to handle. Please choose an integer smaller than 3000!')
+                img = BytesIO()
+                plt.plot(data, color ='c')
+                plt.grid()
+                plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
+                plt.ylabel('ARFIMA(t)');
+                plt.xlabel('time-steps');
+                plt.savefig(img,format='png')
+                plt.close()
+                img.seek(0)
+                plot_url = base64.b64encode(img.getvalue()).decode('utf8')
 
-    except:
-        return render_template('index.html', prediction_text=f'One of the inputs you entered was faulty. Make sure that alpha is between values of -0.5 and 0.5, with the decimal denoted by a dot. Also, the length must be an integer >1')
+                return render_template('index.html', prediction_text=f'You generated {ts_len} steps of an ARFIMA time-series with alpha {alpha_to_gen}. The LSTM predicts the alpha to be {prediction}. Difference is {round(abs(prediction-alpha_to_gen),3)}. How did I do?',
+                figure_to_print = plot_url)
+            else:
+                return render_template('index.html', prediction_text=f'The length of time-series you wish to generate is a bit long for my server to handle. Please choose an integer smaller than 3000!')
+
+        except:
+            return render_template('index.html', prediction_text=f'One of the inputs you entered was faulty. Make sure that alpha is between values of -0.5 and 0.5, with the decimal denoted by a dot. Also, the length must be an integer >1')
 
 if __name__ == '__main__':    
      app.run(host='0.0.0.0')

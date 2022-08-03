@@ -64,11 +64,11 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 <form action="{{url_for('predict')}}" method="post">
     <p> Alpha : <input type='text' name='Alpha' placeholder='-0.5 to 0.5' required='required' />
     <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N steps to gen.' required='required' />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Estimate!</button>
+        <button type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">Estimate!</button>
 </form>
 <h2> If you'd like to see a scatterplot of the LSTM prediction agains real alphas, click below.</h2>
 <form action="{{url_for('picture')}}" method="post">
-      <button type="submit" class="btn btn-secondary btn-block btn-large">Show scatter!</button>
+      <button type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Show scatter!</button>
 </form>
 </h4>
 </div>
