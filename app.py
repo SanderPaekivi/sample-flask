@@ -142,7 +142,7 @@ def predict():
 
 
         img = BytesIO()
-        plt.scatter(alphas, LSTMalphas, color ='g')
+        plt.scatter(alphas, LSTMalphas, color ='#73AD21')
         plt.grid()
         coefs = np.polyfit(alphas, LSTMalphas, 1)
         lr1, lr2 = coefs
@@ -197,7 +197,7 @@ def predict():
                         prediction = round(model(seq).item(),2)
 
                 img = BytesIO()
-                plt.plot(data, color ='g')
+                plt.plot(data, color ='#73AD21')
                 plt.grid()
                 plt.title(f'ARFIMA time-series generated with given value for alpha: {alpha_to_gen}');
                 plt.ylabel('ARFIMA(t)');
