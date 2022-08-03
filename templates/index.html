@@ -26,11 +26,25 @@
       }
     .slider-container { max-width: 300px; margin: 100px auto; background: red; position: relative; box-sizing: content-box; }
     
-    #roundCornerID {
-      border-radius: 30%;
-      width: 200px;
-      height: 150px;
+    .slider-background {     background: white;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 90%;
+      height: 90%;
+      text-align: right;
+      z-index: 1; }
+    
+    .slider-background a {
+      padding: 15px 20px;
+      display: block;
       }
+
+    .slider-info {
+      padding: 45px 30px;
+      }
+    .slider-content { position: absolute; top: 0; left: 0; z-index: 2; background: lightblue; }
+
     
 </style>
 
@@ -47,9 +61,29 @@ Simple demo for LSTM estimation of an ARFIMA time series long-term memory parame
 <div style="background-color:black">
 <hr>
 <hr></div>
-<div class="slider-container" style="background-color:rgba(0,0,0,0.7)">
-<h2> This is a simple webapp to learn model deployment. Your first input is the memory parameter of an ARFIMA model, alpha. It takes values between  -0.5 and 0.5. The second value is the length of ARFIMA to generate, which must be an integer greater than 1. After entry, a recurrent neural network, specifically an LSTM will attempt to estimate alpha from the generated time-series.</h2>
+
+<div class="slider-container">
+
+  <div class="slider-background">
+    <a href="#">more<br>info</a>
+  </div>
+  <div class="slider-content">
+    
+    <div class="slider-info">
+      <img src="https://via.placeholder.com/140x100"/>
+      <h2>
+        lorem<br><b>ipsum</b>
+      </h2>
+      <p>
+        This is a simple webapp to learn model deployment. Your first input is the memory parameter of an ARFIMA model, alpha. It takes values between  -0.5 and 0.5. The second value is the length of ARFIMA to generate, which must be an integer greater than 1. After entry, a recurrent neural network, specifically an LSTM will attempt to estimate alpha from the generated time-series.
+      </p>
+    </div>
+    
+  </div>
+
 </div>
+
+
 <h4> 
 
 <form action="{{url_for('predict')}}" method="post">
