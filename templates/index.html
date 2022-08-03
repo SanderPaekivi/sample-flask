@@ -68,10 +68,14 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 </form>
 <ion-list>
   <ion-item *ngFor="let service of services">
-      <span>Scatter text?</span>
+    <span>Scatter text?</span>
+    <form action="{{url_for('predict')}}" method="post">
       <button type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Show scatter!</button>
+    </form>
   </ion-item>
 </ion-list>
+
+
 </h4>
 </div>
 
