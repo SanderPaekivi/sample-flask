@@ -66,10 +66,12 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N steps to gen.' required='required' />
         <button type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">Estimate!</button>
 </form>
-<span> If you'd like to see a scatterplot of the LSTM prediction agains real alphas, click below.</span>
-<form action="{{url_for('predict')}}" method="post">
+<ion-list>
+  <ion-item *ngFor="let service of services">
+      <span>Scatter text?</span>
       <button type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Show scatter!</button>
-</form>
+  </ion-item>
+</ion-list>
 </h4>
 </div>
 
