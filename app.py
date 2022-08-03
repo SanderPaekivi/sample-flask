@@ -144,7 +144,7 @@ def predict():
         img = BytesIO()
         plt.scatter(alphas, LSTMalphas, color ='c')
         plt.grid()
-        lr1, lr2 = np.polyfit(alphas, LSTMalphasalphas, LSTMalphas, y, 1)
+        lr1, lr2 = np.polyfit(alphas, LSTMalphas, 1)
         plt.plot(alphas, lr1*alphas+lr2)
         plt.title(f'ARFIMA alpha vs LSTM estimate.');
         plt.ylabel('LSTM alpha');
