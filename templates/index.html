@@ -40,7 +40,14 @@
     .p1 {
       font-family: "Times New Roman", Times, serif
       }
-    
+    hr.line2 {
+      width: 80%;
+      height:15px;
+      background-color:black
+      }
+    .p1 {
+      font-family: "Times New Roman", Times, serif
+      }
     
 </style>
 
@@ -66,6 +73,8 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N steps to gen.' required='required' />
         <button type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">Estimate!</button>
 </form>
+
+<hr class="line">
 
 <form action="{{url_for('predict')}}" method="post">
     <p> If you'd like to see a scatterplot of the LSTM prediction agains real alphas, click below. 
