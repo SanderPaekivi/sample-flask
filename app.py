@@ -34,6 +34,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
+#from flask import Markup
 
 working_dir = '/root/sample-flask/'
 #app = Flask(__name__)
