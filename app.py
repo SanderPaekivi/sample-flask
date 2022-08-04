@@ -171,7 +171,7 @@ def predict():
         model_struct_text = 'PyTorch model: \n '+repr(model)
         model_struct_text = model_struct_text.split('\n')
         #model_struct_text = ['<br>'+item for item in model_struct_text]
-        model_struct_text = model_struct_text.replace('\n', '<br>')
+        #model_struct_text = model_struct_text.replace('\n', '<br>')
 
         return render_template('index.html', prediction_text=model_struct_text)
 
