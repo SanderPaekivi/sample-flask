@@ -100,11 +100,15 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 {% if prediction_text %}
 <div class="rcorners1" style="background-color:#73AD21"; white-space: pre-wrap;> 
 <b>
+{% if typeof(prediction_text)=='string' %}
+{{ prediction_text }}
+{% else %}
 {% for para in prediction_text %}
   <p>{{para}}</p>
 {% endfor %}
 </b>
 </div>
+{% endif %}
 {% endif %}
 </h2>
 </body>
