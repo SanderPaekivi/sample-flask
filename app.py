@@ -169,7 +169,7 @@ def predict():
     elif request.form["submit_button"] == 'give summary':
 
         model_struct_text = 'PyTorch model: \n'+repr(model)
-        model_struct_text=model_struct_text.replace("\n","\r\n")
+        model_struct_text=model_struct_text.replace('\n','<br>')
 
         return render_template('index.html', prediction_text=model_struct_text)
 
