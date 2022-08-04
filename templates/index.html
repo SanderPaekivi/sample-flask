@@ -47,6 +47,16 @@
     .p1 {
       font-family: "Times New Roman", Times, serif
       }
+
+    #col1 {
+      display: inline-block;
+      width:50%;
+      }
+
+    #col2 {
+      display: inline-block;
+      width:50%;
+      }
     
 </style>
 
@@ -63,7 +73,7 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 <div>
 <hr class="line">
 </div>
-<div class="rcorners1" style="background-color:#73AD21">
+<div class="rcorners1" id="col1" style="background-color:#73AD21">
   
 <h2> This is a simple webapp to learn model deployment. Your first input is the memory parameter of an ARFIMA model, alpha. It takes values between  -0.5 and 0.5. The second value is the length of ARFIMA to generate, which must be an integer greater than 1. After entry, a recurrent neural network, specifically an LSTM will attempt to estimate alpha from the generated time-series.</h2>
 <h4> 
@@ -88,13 +98,14 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 
 
 </h4>
-</div>
+</div><div id="col2">
 
 <h4 class="center">
 {% if figure_to_print %}
 <img src = "data:image/png;base64, {{ figure_to_print }}" >
 {% endif %}
 </h4>
+</div>
 
 <h2>
 {% if prediction_text %}
