@@ -166,7 +166,12 @@ def predict():
         return render_template('index.html', prediction_text=f'This scatter-plot is based on 200 randomly chosen alpha values, generating 100 units long time-series, with the LSTM providing estimations.',
                 figure_to_print = plot_url)
 
-        
+    elif request.form["submit_button"] == 'give summary':
+
+        model_struct_text = 'PyTorch model: \n'+repr(model)
+
+        return render_template('index.html', prediction_text=model_struct_text)
+
         
     elif request.form['submit_button'] == 'plot one':
 
