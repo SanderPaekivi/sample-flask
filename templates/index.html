@@ -57,6 +57,18 @@
       display: inline-block;
       width:40%;
       }
+    .button {
+      font: bold 11px Arial;
+      text-decoration: none;
+      background-color: #EEEEEE;
+      color: #333333;
+      padding: 2px 6px 2px 6px;
+      border-top: 1px solid #CCCCCC;
+      border-right: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      border-left: 1px solid #CCCCCC;
+      }
+
     
 </style>
 
@@ -72,10 +84,10 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 </h1>
 
 <div class="rcorners1" style="background-color:gray">
-<form action="{{url_for('predict')}}" method="post">
+
   <p> If you'd like to return to the home screen (for whatever reason, since its empty) click here: 
-    <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="go home" class="btn btn-secondary btn-block btn-large">Back.</button>
-</form>
+<a href="{{ url_for('home') }}" class="button">Back. </a>
+
 </div>
 
 
