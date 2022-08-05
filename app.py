@@ -111,6 +111,10 @@ model.eval()
  
 app = Flask(__name__)    
 
+####################################################################
+## journalctl -u sander-web.service <--- to check logs in linux ####
+####################################################################
+
 @app.route('/', methods=['GET'])
 def home():
 
@@ -187,6 +191,9 @@ def predict():
 
         return render_template('index.html', prediction_text=model_struct_text)
 
+    elif request.form['submit_button'] == 'go home':
+
+        return render_template('home.html')
         
     elif request.form['submit_button'] == 'plot one':
 
