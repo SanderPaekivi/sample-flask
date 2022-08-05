@@ -34,6 +34,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
+from PIL import Image
 
 working_dir = '/root/sample-flask/'
 #app = Flask(__name__)
@@ -117,7 +118,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    user_image = working_dir + 'seal.jpeg'
+    user_image = Image.open(working_dir + 'seal.jpeg')
     return render_template('home.html')
     #return 'hello world'
 
