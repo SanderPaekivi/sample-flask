@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> My Home Page test </title>
+</head>
+
+<style> 
+    body {
+      background-color: white;
+      }
+
+    h1 {
+      color: navy;
+      margin-left: 20px;
+      margin-right:20px
+    }
+    html {min-height: 100%;}
+    img {
+        border: 1px solid black
+        }
+    * {text-align: justify;
+      color: black;
+      font-weight: normal;
+      }
+    .center {
+      text-align: center;
+      color:black;
+      }
+    .rcorners1 {
+      border-radius: 25px;
+      background: #73AD21;
+      padding: 25px; 
+      margin-left: 40px;
+      margin-right: 40px
+      }
+    hr.line {
+      width: 92%;
+      height:10px;
+      background-color:black
+      }
+    .p1 {
+      font-family: "Times New Roman", Times, serif
+      }
+    hr.line2 {
+      width: 90%;
+      }
+    .p1 {
+      font-family: "Times New Roman", Times, serif
+      }
+
+    #col1 {
+      display: inline-block;
+      width:40%;
+      }
+
+    #col2 {
+      display: inline-block;
+      width:40%;
+      }
+    
+</style>
+
+<body text='black'; font-weight: normal; font-family: "Times New Roman", Times, serif>
+<h1>
+<b>
+<div class="rcorners1">
+<i>
+Click button to go to LSMT?
+</i>
+</div>
+</b>
+</h1>
+<div>
+<hr class="line">
+</div>
+<div class="rcorners1" id="col1" style="background-color:#73AD21">
+  
+<h4> 
+
+<form action="{{url_for('goto_lstm')}}" method="post">
+        <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="goto_lstm_button" class="btn btn-primary btn-block btn-large">LSTM model</button>
+</form>
+
+<hr class="line2">
+
+
+</div>
+
+</body>
+</html>

@@ -113,12 +113,27 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
+
+    return render_template('home.html')
+    #return 'hello world'
+
+@app.route('/', methods=['GET'])
+def goto_lstm():
+    if request.form['submit_button'] == 'goto_lstm_button':
+            
+
+        return render_template('index.html', prediction_text = '')
+        #return 'hello world'
+
+
+@app.route('/lstm', methods=['GET'])
+def home():
     
     return render_template('index.html', prediction_text = '')
     #return 'hello world'
 
 
-@app.route('/', methods=['POST'])
+@app.route('/lstm', methods=['POST'])
 def predict():
     if request.form['submit_button'] == 'plot scatter':
         
