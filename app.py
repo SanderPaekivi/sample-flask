@@ -117,7 +117,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-
+    user_image = working_dir + 'seal.jpeg'
     return render_template('home.html')
     #return 'hello world'
 

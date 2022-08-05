@@ -76,6 +76,7 @@
       grid-template-columns: auto auto;
       padding: 10px;
       column-gap: 20px;
+      row-gap: 20px;
       }
     .grid-item {
       border-radius: 25px;
@@ -109,7 +110,7 @@ Homepage for Sander Paekivi!
     <a href="{{ url_for('lstm_home') }}" class="button">Go to LSTM model. </a>
   </div>
   <div class="grid-item" style="background-color:#73AD21">
-    <img src="seal.jpeg" alt="Cute seal picture">
+    <img src="{{ user_image }}" alt="Cute seal picture">
   </div>  
 </div>
 
