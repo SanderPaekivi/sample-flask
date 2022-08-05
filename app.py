@@ -123,10 +123,7 @@ def home():
 
 @app.route('/', methods=['POST'])
 def goto_lstm():
-    if request.form['submit_button'] == 'goto_lstm_button':
-        return render_template('index.html', predict_text='')
-    else:
-        return render_template('index.html', predict_text='')
+    return render_template('index.html', predict_text='')
 
 
 @app.route('/lstm', methods=['GET'])
