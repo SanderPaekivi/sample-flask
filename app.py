@@ -127,12 +127,6 @@ def goto_lstm():
 
     return render_template('index.html', prediction_text = '')
 
-@app.route('/lstm', methods=['GET'])
-def lstm_home():
-    
-    return render_template('index.html', prediction_text = '')
-    #return 'hello world'
-
 
 @app.route('/lstm', methods=['POST'])
 def predict():
