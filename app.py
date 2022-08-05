@@ -118,8 +118,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    user_image = Image.open('seal.jpeg')
-    return render_template('home.html')
+    user_image = Image.open(working_dir + 'seal.jpeg')
+    return render_template('home.html', user_image={user_image})
     #return 'hello world'
 
 @app.route('/', methods=['POST'])
