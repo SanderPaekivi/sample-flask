@@ -68,6 +68,39 @@
       border-bottom: 1px solid #333333;
       border-left: 1px solid #CCCCCC;
       }
+    .grid-container {
+      margin-left: 40px;
+      margin-right: 40px;
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 10px;
+      column-gap: 20px;
+      row-gap: 20px;
+      }
+    .grid-item {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      border-radius: 25px;
+      background: #73AD21;
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      }
+    .grid-item3 {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      border-radius: 25px;
+      background: #73AD21;
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      grid-row: 2 / 4;
+      }
+    .grid-item2 {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 0px;
+      font-size: 30px;
+      text-align: center;
+      }
+
 
     
 </style>
@@ -90,53 +123,59 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 <div>
 <hr class="line">
 </div>
-<div class="rcorners1" id="col1" style="background-color:#73AD21;border: 1px solid rgba(0, 0, 0, 0.8);">
-  
-<p> 
-  This is a simple webapp to learn model deployment. 
-  Your first input is the memory parameter of an ARFIMA model, alpha. 
-  It takes values between  -0.5 and 0.5. 
-  The second value is the length of ARFIMA to generate, which must be 
-  an integer greater than 1. After entry, a recurrent neural network, 
-  specifically an LSTM will attempt to estimate alpha from the generated time-series.
-</p>
-<h4> 
 
-<form action="{{url_for('predict')}}" method="post">
-    <p> Alpha : <input type='text' name='Alpha' placeholder='-0.5 to 0.5' required='required' />
-    <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N>1 steps to gen.' required='required' />
-        <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">LeSTiMate!</button>
-</form>
+<div class="grid-container">
+  <div class="grid-item" style="background-color:#73AD21">
+    
+    <p> 
+      This is a simple webapp to learn model deployment. 
+      Your first input is the memory parameter of an ARFIMA model, alpha. 
+      It takes values between  -0.5 and 0.5. 
+      The second value is the length of ARFIMA to generate, which must be 
+      an integer greater than 1. After entry, a recurrent neural network, 
+      specifically an LSTM will attempt to estimate alpha from the generated time-series.
+    </p>
+    
+    <form action="{{url_for('predict')}}" method="post">
+        <p> Alpha : <input type='text' name='Alpha' placeholder='-0.5 to 0.5' required='required' />
+        <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N>1 steps to gen.' required='required' />
+            <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">LeSTiMate!</button>
+    </form>
+    
+    <hr class="line2">
+    
+    <form action="{{url_for('predict')}}" method="post">
+        <p> If you'd like to see a scatterplot of the LSTM predictions agains real alphas, 
+          click here: 
+          <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Generate scatter!</button>
+    </form>
+    
+    <form action="{{url_for('predict')}}" method="post">
+      <p> If you'd like to see the model structure, click here: 
+        <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="give summary" class="btn btn-secondary btn-block btn-large">Summary.</button>
+    </form>
 
-<hr class="line2">
+  </div>
+  <div class="grid-item" style="background-color:#73AD21">
+    
+    <h4 class="center">  
+      {% if figure_to_print %}
+      <img src = "data:image/png;base64, {{ figure_to_print }}" style="width:100%;height:100%" >
+      {% endif %}
+    </h4>
 
-<form action="{{url_for('predict')}}" method="post">
-    <p> If you'd like to see a scatterplot of the LSTM predictions agains real alphas, 
-      click here: 
-      <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Generate scatter!</button>
-</form>
-
-<form action="{{url_for('predict')}}" method="post">
-  <p> If you'd like to see the model structure, click here: 
-    <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="give summary" class="btn btn-secondary btn-block btn-large">Summary.</button>
-</form>
-
-</h4>
-</div><div id="col2">
-<h4 class="center">
-{% if figure_to_print %}
-<img src = "data:image/png;base64, {{ figure_to_print }}" style="width:100%;height:100%" >
-{% endif %}
-</h4>
+  </div>
 </div>
 
-<h2>
+
 {% if prediction_text %}
 <div class="rcorners1" style="background-color:#73AD21; border: 1px solid rgba(0, 0, 0, 0.8);"; white-space: pre-wrap;> 
+<p>
 {% for para in prediction_text %}
-  {{para}}<br>
+   {{para}}<br> 
 {% endfor %}
+</p>
 {% endif %}
-</h2>
+
 </body>
 </html>
