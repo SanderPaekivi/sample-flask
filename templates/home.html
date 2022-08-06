@@ -11,9 +11,11 @@
 
     h1 {
       color: navy;
+      font-family:verdana;
       margin-left: 20px;
       margin-right:20px
     }
+    p {font-family:courier}
     html {min-height: 100%;}
     img {
         border: 1px solid black
@@ -118,7 +120,7 @@
     
 </style>
 
-<body text='black'; font-weight: normal; font-family: "Times New Roman", Times, serif>
+<body>
 <h1>
 <b>
 <div class="rcorners1" style="border: 1px solid rgba(0, 0, 0, 0.8);">
@@ -132,10 +134,10 @@ Homepage for Sander Paekivi!
 
 <div class="grid-container">
   <div class="grid-item" style="background-color:#73AD21">
-    <h4> This page is quite empty for now, since it's all just for practise and giggles, but who knows what will be here one day in the future? </h2>
+    <p> This page is quite empty for now, since it's all just for practise and giggles, but who knows what will be here one day in the future? </h2>
   </div>
   <div class="grid-item" style="background-color:#73AD21">
-    <h4> To see a demo app of an LSTM neural network operating on ARFIMA time-series, click the button below!</h2>
+    <p> To see a demo app of an LSTM neural network operating on ARFIMA time-series, click the button below!</h2>
     <a href="{{ url_for('lstm_home') }}" class="button" style="color:white; background-color:black;border-radius: 6px;">Go to LSTM model. </a>
   </div>
   <div class="grid-item3" style="background-color:#73AD21">
@@ -143,13 +145,13 @@ Homepage for Sander Paekivi!
     <img src="https://github.com/SanderPaekivi/sample-flask/blob/main/seal.jpeg?raw=true" alt="Cute seal picture">
   </div>  
   <div class="grid-item">
-    <h4> Some links here maybe? Perhaps links to my researchgate or whatnot...</h4>
+    <p> Some links here maybe? Perhaps links to my researchgate or whatnot...</p>
   </div>  
   <div class="grid-item">
-    <h4> Some other stuff here but testing grid cells and funky stuff</h4>
+    <p> Some other stuff here but testing grid cells and funky stuff</p>
   </div>  
   <div class="grid-item" style="background-color:#73AD21">
-    <h4> More content?? </h4>
+    <p> More content?? </p>
   </div>
   <div class="grid-item" style="background-color:#73AD21">
     <p> I've included a link here to my ResearchGate page, fancy shmancy.</p>
