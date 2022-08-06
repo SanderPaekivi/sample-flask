@@ -92,7 +92,7 @@
       padding: 20px;
       font-size: 30px;
       text-align: center;
-      grid-row: 2 / 4;
+      grid-row: 1 / 3;
       }
     .grid-item2 {
       border: 1px solid rgba(0, 0, 0, 0.8);
@@ -156,7 +156,7 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     </form>
 
   </div>
-  <div class="grid-item2">  
+  <div class="grid-item3">  
     <h4 class="center">  
       {% if figure_to_print %}
       <img src = "data:image/png;base64, {{ figure_to_print }}" style="width:100%;height:100%" >
@@ -164,17 +164,21 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     </h4>
 
   </div>
+  <div class="grid-item">  
+  {% if prediction_text %}
+  <div class="rcorners1" style="background-color:#73AD21; border: 1px solid rgba(0, 0, 0, 0.8);"; white-space: pre-wrap;> 
+  <p>
+  {% for para in prediction_text %}
+     {{para}}<br> 
+  {% endfor %}
+  </p>
+  {% endif %}
+  </div>
+
 </div>
 
 
-{% if prediction_text %}
-<div class="rcorners1" style="background-color:#73AD21; border: 1px solid rgba(0, 0, 0, 0.8);"; white-space: pre-wrap;> 
-<p>
-{% for para in prediction_text %}
-   {{para}}<br> 
-{% endfor %}
-</p>
-{% endif %}
+
 
 </body>
 </html>
