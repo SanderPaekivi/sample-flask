@@ -157,20 +157,22 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 
   </div>
   <div class="grid-item">  
-    <h4 class="center">  
+    <p>
+      Plot  
       {% if figure_to_print %}
       <img src = "data:image/png;base64, {{ figure_to_print }}" style="width:100%;height:100%" >
       {% endif %}
-    </h4>
+    </p>
   </div>
   <div class="grid-item">  
-  {% if prediction_text %}
-  <p>
-  {% for para in prediction_text %}
-     {{para}}<br> 
-  {% endfor %}
-  </p>
-  {% endif %}
+    <p>
+      Information
+    {% if prediction_text %}
+    {% for para in prediction_text %}
+      {{para}}<br> 
+    {% endfor %}
+    </p>
+    {% endif %}
   </div>
 
 </div>
