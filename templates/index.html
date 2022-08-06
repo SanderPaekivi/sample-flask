@@ -105,7 +105,7 @@
     
 </style>
 
-<body text='black'; font-weight: normal; font-family: "Times New Roman", Times, serif>
+<body>
 <h1>
 <div class="rcorners1" style="border: 1px solid rgba(0, 0, 0, 0.8);">
 Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA time series via LSMT.
@@ -156,8 +156,7 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     </form>
 
   </div>
-  <div class="grid-item2">
-    
+  <div class="grid-item2">  
     <h4 class="center">  
       {% if figure_to_print %}
       <img src = "data:image/png;base64, {{ figure_to_print }}" style="width:100%;height:100%" >
