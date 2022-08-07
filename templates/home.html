@@ -118,7 +118,35 @@
       max-height: auto;
       align-items: center;
       }
-          
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+      }
+
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      }
+
+    .card button:hover {
+      opacity: 0.7;
+      }
+              
     
 </style>
 
@@ -156,8 +184,18 @@ Homepage for Sander Paekivi!
     <p> More content?? </p>
   </div>
   <div class="grid-item" style="background-color:#73AD21">
-    <p> I've included a link here to my ResearchGate page, fancy shmancy.</p>
-    <a href="https://www.researchgate.net/profile/Sander-Paekivi-2" class="button" style="color:white; background-color:black;border-radius: 6px;"> My ResearchGate</a>
+
+    <div class="card">
+<!--      <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%"> -->
+      <h1>ResearchGate</h1>
+      <p>I've included a link here to my ResearchGate page, fancy shmancy.</p>
+      <p><button>
+        <a href="https://www.researchgate.net/profile/Sander-Paekivi-2" class="button"> My ResearchGate</a>
+      </button></p>
+    </div>
+
+<!--    <p> I've included a link here to my ResearchGate page, fancy shmancy.</p> -->
+<!--    <a href="https://www.researchgate.net/profile/Sander-Paekivi-2" class="button" style="color:white; background-color:black;border-radius: 6px;"> My ResearchGate</a> -->
   </div>
   
 </div>
