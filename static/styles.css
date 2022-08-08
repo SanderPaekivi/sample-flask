@@ -113,6 +113,7 @@ hr.line2 {
 
 item1 {
     grid-area: first;
+    min-width: 200px;
     }
 .item2 {
     grid-area: second;
