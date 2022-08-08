@@ -87,7 +87,7 @@ hr.line2 {
     text-align: center;
     }
 .item1 {
-    grid-column: 1;
+    grid-column: 1 / 1;
     grid-row: 1 / span 4;
     }
 .item2 {
