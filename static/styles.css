@@ -85,8 +85,8 @@ hr.line2 {
   
 .grid-container {
     display: grid;
-    grid-template-areas: 'first second third'
-    'first fourth fifth';
+    grid-template-areas: 'first first second third'
+    'first first fourth fifth';
     margin-left: 40px;
     margin-right: 40px;
     /*justify-content: space-evenly; */
