@@ -6,12 +6,12 @@ h1 {
     font-family:'Trebuchet MS', sans-serif;
     margin-left: 20px;
     margin-right:20px
-  }
+    }
 p {font-family:'Trebuchet MS', sans-serif}
 html {min-height: 100%;}
 img {
-      border: 1px solid black
-      }
+    border: 1px solid black
+    }
 .center {
     text-align: center;
     color:black;
@@ -88,7 +88,7 @@ hr.line2 {
     font-size: 12px;
     text-align: left;
     grid-row: 2 / 4;
-  }
+    }
 .grid-item2 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 0px;
@@ -106,7 +106,7 @@ img {
     width: 300px;
     height: 300px;
     perspective: 1000px;
-  }
+    }
 
 .flip-card-inner {
     position: relative;
@@ -116,11 +116,11 @@ img {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+    }
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
+    }
 
 .flip-card-front, .flip-card-back {
     position: absolute;
@@ -128,16 +128,16 @@ img {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
+    }
 
 .flip-card-front {
     background-color: transparent;
     color: black;
-  }
+    }
 
 .flip-card-back {
     background-color:green;
     color: white;
     transform: rotateY(180deg);
-  }
+    }
             
