@@ -68,7 +68,7 @@ hr.line2 {
     margin-right: 40px;
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: 1fr 1fr;
+    
     padding: 10px;
     column-gap: 20px;
     justify-content: start;
