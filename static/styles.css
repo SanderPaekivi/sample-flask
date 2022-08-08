@@ -121,10 +121,10 @@ hr.line2 {
     }
         
 
-.item1 {
+/*.item1 {
     grid-row: span 4;
     }
-/*.item2 {
+.item2 {
     grid-row: 1;
     }
 .item3 {
