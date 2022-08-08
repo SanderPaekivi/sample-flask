@@ -151,7 +151,7 @@ hr.line2 {
     } */
 img {
     flex: 50%;
-    max-width: 100%;
+    max-width: 300px;
     max-height: auto;
     align-items: center;
     } 
