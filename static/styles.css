@@ -83,6 +83,14 @@ hr.line2 {
     border-left: 1px solid #CCCCCC;
     }
 
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+    }
+
 .background-img{
     /* background-image: {{url_for('static', filename='profile_pic2.jpeg' }}; */
     background-image:url('profile_pic2.jpeg');
