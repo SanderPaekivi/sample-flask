@@ -149,12 +149,12 @@ hr.line2 {
     font-size: 12px;
     text-align: center;
     } */
-/* img {
+img {
     flex: 50%;
     max-width: 100%;
     max-height: auto;
     align-items: center;
-    } */
+    } 
 .flip-card {
     background-color: transparent;
     width: 300px;
