@@ -65,7 +65,7 @@ hr.line2 {
     }
   
 .grid-container {
-    /* margin-left: 40px;
+    margin-left: 40px;
     margin-right: 40px;
     display: grid;
     justify-content: space-evenly; 
@@ -73,12 +73,12 @@ hr.line2 {
     padding: 10px;
     column-gap: 20px;
      justify-content: start;
-    row-gap: 20px; */
-    display: grid;
+    row-gap: 20px; 
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 10px;
-    padding: 10px;
+    padding: 10px;*/
     }
 .grid-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
