@@ -87,8 +87,7 @@ hr.line2 {
     /* background-image: {{url_for('static', filename='profile_pic2.jpeg' }}; */
     background-image:url('profile_pic2.jpeg');
     background-position:center;
-    width: 80%;
-    height: 80%;
+    background-size: cover;
     }
   
 .grid-container {
