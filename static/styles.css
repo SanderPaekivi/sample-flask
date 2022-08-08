@@ -86,6 +86,7 @@ hr.line2 {
     padding: 20px;
     font-size: 12px;
     grid-row: 1/4;
+    grid-column: 1;
     /* grid-column: 2; */
     text-align: center;
     }
