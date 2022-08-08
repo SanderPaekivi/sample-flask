@@ -77,6 +77,10 @@ hr.line2 {
     display: grid;
     gap: 10px;
     padding: 10px;
+    grid-template-areas: "one two"
+    "one three"
+    "one four"
+    "one five";
     }
 .grid-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -85,10 +89,6 @@ hr.line2 {
     font-size: 12px;
     /* grid-column: 2; */
     text-align: center;
-    grid-template-areas: "one two"
-    "one three"
-    "one four"
-    "one five";
     }
 .item1 {
     grid-column: 1;
