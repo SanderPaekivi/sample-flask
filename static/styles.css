@@ -84,7 +84,7 @@ hr.line2 {
     }
   
 .grid-container {
-    grid-auto-columns: 50px;
+    grid-auto-columns: 150px;
     margin-left: 40px;
     margin-right: 40px;
     display: grid;
