@@ -98,9 +98,9 @@ hr.line2 {
     text-align: center;
     }
 img {
-    
+    /* flex: 50%; */
     max-width: 100%;
-    max-height: auto;
+    /* max-height: auto; */
     align-items: center;
     }
 .flip-card {
