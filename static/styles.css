@@ -92,10 +92,10 @@ hr.line2 {
     /*height: 2000px;*/
     margin-left: 40px;
     margin-right: 40px;
-    justify-content: space-evenly; 
+    /*justify-content: space-evenly; */
     padding: 10px;
     column-gap: 20px;
-    justify-content: start;
+    /*justify-content: start;*/
     row-gap: 20px; 
     /* display: grid;
     grid-template-columns: 1fr 1fr;
