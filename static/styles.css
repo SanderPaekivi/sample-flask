@@ -85,7 +85,6 @@ hr.line2 {
   
 .grid-container {
     display: grid;
-    grid-auto-rows: 1/2fr;
     grid-auto-columns: 1fr 1fr;
     grid-template-areas: 'second third'
     'fourth fifth';
