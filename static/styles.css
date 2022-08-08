@@ -111,7 +111,7 @@ hr.line2 {
         
 
 item1 {
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: first;
     }
 .item2 {
     grid-area: second;
