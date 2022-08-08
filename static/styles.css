@@ -52,6 +52,7 @@ hr.line2 {
     width:40%;
     }
 .button {
+    display: grid;
     font: bold 11px Arial;
     text-decoration: none;
     background-color: #EEEEEE;
