@@ -105,7 +105,6 @@ hr.line2 {
     grid-row: 1/4;
     }
 .item2 {
-    max-height: 100%;
     grid-column: 2;
     grid-row: 1;
     }
