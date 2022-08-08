@@ -91,7 +91,7 @@ hr.line2 {
     'first third'
     'first fourth'
     'first fifth';
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
     /*justify-content: space-evenly; */
@@ -109,6 +109,7 @@ hr.line2 {
 .grid-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 25px;
+    margin-top: 5px;
     padding: 20px;
     font-size: 12px;
     /* grid-column: 2; */
