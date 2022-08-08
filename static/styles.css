@@ -92,8 +92,8 @@ hr.line2 {
     'first fourth'
     'first fifth';
     margin-top: 10px;
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
     /*justify-content: space-evenly; */
     padding: 10px;
     column-gap: 20px;
