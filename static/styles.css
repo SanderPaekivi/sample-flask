@@ -83,6 +83,11 @@ hr.line2 {
     border-left: 1px solid #CCCCCC;
     }
 
+.background-img{
+    /* background-image: {{url_for('static', filename='profile_pic2.jpeg' }}; */
+    background-image:url('profile_pic2.jpeg');
+    }
+  
 .grid-container {
     display: grid;
     grid-auto-rows: 1fr 1fr 1fr 1fr;
