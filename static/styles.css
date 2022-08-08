@@ -74,8 +74,8 @@ hr.line2 {
      justify-content: start;
     row-gap: 20px; */
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-    background-color: #2196F3;
     padding: 10px;
     }
 .grid-item {
