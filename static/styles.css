@@ -68,11 +68,11 @@ hr.line2 {
     margin-left: 40px;
     margin-right: 40px;
     display: grid;
-
+    /* justify-content: space-evenly; */
     grid-template-columns: 1fr 1fr;
     padding: 10px;
     column-gap: 20px;
-    justify-content: start;
+    /* justify-content: start; */
     row-gap: 20px; 
     /* display: grid;
     grid-template-columns: 1fr 1fr;
