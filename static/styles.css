@@ -89,7 +89,7 @@ hr.line2 {
     grid-auto-columns: 1fr 1fr 1fr;
     grid-template-areas: 'second second second' 
     'third fourth fifth';
-    margin-left: 20px;
+    margin-left: 0px;
     margin-right: 40px;
     /*justify-content: space-evenly; */
     padding: 10px;
