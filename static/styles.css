@@ -48,12 +48,12 @@ hr.line2 {
     
 .left {
     display: inline-block;
-    width: 40%;
+    width: 50%;
     }
     
 .right {
     display: inline-block;
-    width: 40%;
+    width: 50%;
     }
 .row:after {
     content: "";
