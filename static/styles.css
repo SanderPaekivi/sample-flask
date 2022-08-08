@@ -92,7 +92,7 @@ hr.line2 {
     margin-right: 40px;
     /* justify-content: space-evenly; */
     padding: 10px;
-    
+    column-gap: 20px;
     /* justify-content: start; */
     row-gap: 20px; 
     /* display: grid;
@@ -100,16 +100,6 @@ hr.line2 {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 10px;
     padding: 10px; */ 
-    }
-.grid-item-first {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    padding: 20px;
-    font-size: 12px;
-    grid-row: 1/4;
-    grid-column: 1;
-    /* grid-column: 2; */
-    text-align: center;
     }
 .grid-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
