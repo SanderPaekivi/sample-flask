@@ -91,9 +91,9 @@ hr.line2 {
     'third fourth fifth';
     margin-top: 10px;
     margin-left: 0px;
-    margin-right: 0px;
+    margin-right: 10px;
     /*justify-content: space-evenly; */
-    padding: 0px;
+    padding: 10px;
     column-gap: 20px;
     /*justify-content: start;*/
     row-gap: 20px; 
