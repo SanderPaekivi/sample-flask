@@ -84,13 +84,12 @@ hr.line2 {
     }
   
 .grid-container {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 50px);
     margin-left: 40px;
     margin-right: 40px;
-    display: grid;
     /* justify-content: space-evenly; */
-    grid-template-columns: 1fr 1fr;
     padding: 10px;
     column-gap: 20px;
     /* justify-content: start; */
