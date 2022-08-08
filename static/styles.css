@@ -87,7 +87,7 @@ hr.line2 {
     display: grid;
     grid-template-areas: 'first first second third'
     'first first fourth fifth';
-    height: 2000px;
+    width: 200px;
     margin-left: 40px;
     margin-right: 40px;
     /*justify-content: space-evenly; */
