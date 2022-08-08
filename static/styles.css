@@ -121,7 +121,7 @@ hr.line2 {
         
 
 .item1 {
-    grid-row: 1/4;
+    grid-row: span 4;
     }
 .item2 {
     grid-row: 1;
