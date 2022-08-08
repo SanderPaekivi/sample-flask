@@ -86,7 +86,7 @@ hr.line2 {
 .grid-container {
     display: grid;
     grid-auto-rows: auto auto auto auto;
-    grid-auto-columns: auto auto;
+    grid-auto-columns: 1fr auto;
     grid-template-areas: 'first second' 
     'first third'
     'first fourth'
