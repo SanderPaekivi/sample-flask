@@ -53,7 +53,11 @@ hr.line2 {
 .right {
     width: 75%;
     }
-    
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
       
 #col1 {
     display: inline-block;
