@@ -41,7 +41,20 @@ hr.line {
 hr.line2 {
     width: 90%;
     }
-
+.column {
+    float: left;
+    padding: 10px;
+    }
+    
+.left {
+    width: 25%;
+    }
+    
+.right {
+    width: 75%;
+    }
+    
+      
 #col1 {
     display: inline-block;
     width:40%;
