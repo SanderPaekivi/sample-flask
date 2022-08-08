@@ -90,6 +90,15 @@ hr.line2 {
     text-align: center;
     }
 
+.grid-cell {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+    }
+    
+
 .item1 {
     grid-row: 1/4;
     }
