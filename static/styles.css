@@ -150,7 +150,7 @@ hr.line2 {
     text-align: center;
     } */
 img {
-    flex: 50%;
+    /* flex: 50%; */
     max-width: 300px;
     max-height: auto;
     align-items: center;
