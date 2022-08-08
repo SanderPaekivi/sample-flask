@@ -84,7 +84,7 @@ hr.line2 {
     }
   
 .grid-container {
-    display: block;
+    display: grid;
     grid-template-areas: 'first first second third'
     'first first fourth fifth';
     margin-left: 40px;
@@ -112,6 +112,7 @@ hr.line2 {
 
 item1 {
     grid-area: first;
+    min-width: 400px;
     }
 .item2 {
     grid-area: second;
