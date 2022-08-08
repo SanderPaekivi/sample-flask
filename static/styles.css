@@ -86,7 +86,6 @@ hr.line2 {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 200px);
     /*height: 2000px;*/
     margin-left: 40px;
     margin-right: 40px;
@@ -112,7 +111,7 @@ hr.line2 {
     }
         
 
-/*.item1 {
+item1 {
     grid-row: span 4;
     }
 .item2 {
@@ -126,7 +125,7 @@ hr.line2 {
     }
 .item5 {
     grid-row: 4;
-    }*/
+    }
         
 /* .grid-item3 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
