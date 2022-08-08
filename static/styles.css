@@ -82,6 +82,10 @@ hr.line2 {
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
     }
+
+.background-img{
+    background-image: url('static/profile_pic2.jpeg');
+    }
   
 .grid-container {
     display: grid;
