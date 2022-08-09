@@ -2,10 +2,11 @@ body {
     background-color: white;
     text-align: center;
     }
+
 .content{
     margin: 0 auto;
     max-width: 1024px; 
-    min-height: 1024px;
+    align-content: center;
     }
 
 h1 {
