@@ -3,14 +3,11 @@ body {
     text-align: center;
 
     }
-
-#content{
-    position: relative;
-    margin: 0 auto;
-    width: 1024px;
-    /*max-width: 1024px; */
-    align-content: center;
-    }
+#content {
+    max-width: 1024px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;}
 
 h1 {
     font-family:'Trebuchet MS', sans-serif;
