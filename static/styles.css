@@ -7,7 +7,7 @@ body {
 #content{
     position: relative;
     margin: 0 auto;
-    width: 80%;
+    width: 1024px;
     /*max-width: 1024px; */
     align-content: center;
     }
