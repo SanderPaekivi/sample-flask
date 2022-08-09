@@ -5,6 +5,7 @@ body {
 .content{
     margin: 0 auto;
     max-width: 1024px; 
+    min-height: 1024px;
     }
 
 h1 {
