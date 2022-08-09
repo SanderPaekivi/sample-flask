@@ -2,7 +2,7 @@ body {
     background-color: white;
     text-align: center;
     }
-#content{
+.content{
     max-width: 1024px; 
     margin: 0 auto;
     }
