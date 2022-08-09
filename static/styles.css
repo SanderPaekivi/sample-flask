@@ -4,7 +4,7 @@ body {
     }
 #content{
     max-width: 1024px; 
-    text-align: center;
+    margin: auto;
     }
 
 h1 {
