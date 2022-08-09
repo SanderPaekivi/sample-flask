@@ -3,8 +3,8 @@ body {
     text-align: center;
     }
 
-.content{
-    margin: auto;
+#content{
+    margin: 0 auto;
     max-width: 1024px; 
     align-content: center;
     }
