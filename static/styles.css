@@ -108,11 +108,11 @@ hr.line2 {
 .grid-container {
     display: grid;
     grid-auto-rows: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 2fr 1fr 1fr;
-    grid-template-areas: 'first second second' 
-    'first third fourth'
-    'first fifth sixth'
-    'first seventh eigth';
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: 'first second' 
+    'first third '
+    'first fourth'
+    'first fifth';
     margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
