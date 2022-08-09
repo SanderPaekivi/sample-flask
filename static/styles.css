@@ -1,5 +1,7 @@
 body {
     background-color: white;
+    max-width: 1024px; 
+    text-align: center;
     }
 
 h1 {
