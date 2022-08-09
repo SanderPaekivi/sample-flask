@@ -4,7 +4,7 @@ body {
     }
 
 .content{
-
+    margin: auto;
     max-width: 1024px; 
     align-content: center;
     }
