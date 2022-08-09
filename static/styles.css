@@ -154,6 +154,17 @@ item1 {
 .item5 {
     grid-area: fifth;
     }
+
+.item6 {
+    grid-area: fifth;
+    }
+.item7 {
+    grid-area: sixth;
+    }
+.item8 {
+    grid-area: eigth;
+    }
+        
         
 /* .grid-item3 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
