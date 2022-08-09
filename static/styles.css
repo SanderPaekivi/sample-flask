@@ -5,6 +5,7 @@ body {
 #content{
     max-width: 1024px; 
     margin: auto;
+    width: 80%;
     }
 
 h1 {
