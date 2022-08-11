@@ -114,6 +114,7 @@ app = Flask(__name__)
 
 ####################################################################
 ## journalctl -u sander-web.service <--- to check logs in linux ####
+## journalctl --unit=my.service -n 100 --no-pager <-- last logs ####
 ####################################################################
 
 @app.route('/', methods=['GET'])
