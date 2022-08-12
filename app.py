@@ -117,21 +117,21 @@ app = Flask(__name__)
 ## journalctl --unit=my.service -n 100 --no-pager <-- last logs ####
 ####################################################################
 
-@app.route('/', methods=['GET'])
+@app.route('flask/', methods=['GET'])
 def home():
     return render_template('home.html')
     #return 'hello world'
 
-@app.route('/', methods=['POST'])
+@app.route('flask/', methods=['POST'])
 def goto_lstm():
     return render_template('index.html', predict_text='')
 
 
-@app.route('/lstm', methods=['GET'])
+@app.route('flask/lstm', methods=['GET'])
 def lstm_home():
     return render_template('index.html', predict_text='')
 
-@app.route('/lstm', methods=['POST'])
+@app.route('flask/lstm', methods=['POST'])
 def predict():
     if request.form['submit_button'] == 'plot scatter':
         
