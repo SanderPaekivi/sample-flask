@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}" type="text/css" >
+  <link rel="stylesheet" href="{{'flask/' + url_for('static', filename = 'styles.css')}}" type="text/css" >
 
   <title> My Home Page test </title>
 </head>
@@ -39,7 +39,7 @@
       The aim of the research is to apply the technique in a sliding-window approach for longer 
       series, in order to study transient long-term memory. To see a demo app of this LSTM, 
       click below: </p>
-    <a href="{{ url_for('lstm_home') }}" class="button" style="color:white; background-color:black;border-radius: 6px;">Go to LSTM model. </a>
+    <a href="{{'flask/' +  url_for('lstm_home') }}" class="button" style="color:white; background-color:black;border-radius: 6px;">Go to LSTM model. </a>
   </div>
   
   <div class="grid-item item3" > 
