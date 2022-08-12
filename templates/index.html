@@ -16,7 +16,7 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
 <div class="rcorners1" style="background-color:rgba(0, 0, 0, 0.25)">
 
   <p> If you'd like to return to the home screen, click here: 
-<a href="{{'flask/' +  url_for('home') }}" class="button" style="color:white; background-color:black;border-radius: 6px;">Back. </a>
+<a href="{{'flask' +  url_for('home') }}" class="button" style="color:white; background-color:black;border-radius: 6px;">Back. </a>
   </p>
 </div>
 
@@ -37,7 +37,7 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
       specifically an LSTM will attempt to estimate alpha from the generated time-series.
     </p>
     
-    <form action="{{'flask/' + url_for('predict')}}" method="post">
+    <form action="{{'flask' + url_for('predict')}}" method="post">
         <p> Alpha : <input type='text' name='Alpha' placeholder='-0.5 to 0.5' required='required' />
         <p> Time-series length : <input type='text' name='tsl' placeholder='Integer N>1 steps to gen.' required='required' />
             <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot one" class="btn btn-primary btn-block btn-large">LeSTiMate!</button>
@@ -45,13 +45,13 @@ Simple demo for estimating the long-term memory parameter, alpha, of an ARFIMA t
     
     <hr class="line2">
     
-    <form action="{{'flask/' + url_for('predict')}}" method="post">
+    <form action="{{'flask' + url_for('predict')}}" method="post">
         <p> If you'd like to see a scatterplot of the LSTM predictions agains real alphas, 
           click here: 
           <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="plot scatter" class="btn btn-secondary btn-block btn-large">Generate scatter!</button>
     </form>
     
-    <form action="{{'flask/' + url_for('predict')}}" method="post">
+    <form action="{{'flask' + url_for('predict')}}" method="post">
       <p> If you'd like to see the model structure, click here: 
         <button style="color:white; background-color:black;border-radius: 6px;" type="submit" name="submit_button" value="give summary" class="btn btn-secondary btn-block btn-large">Summary.</button>
     </form>
